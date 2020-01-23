@@ -25,7 +25,9 @@ def process_notification(session_bus, signal_message):
         return
 
     message = signal_message.get_args_list()
-    print('---[ %s ]---\r\n%s\r\n' % (message[3], message[4]))
+    app_name = message[3]
+    notification = message[4]
+    print(f'---[ {app_name} ]---\r\n{notification}\r\n')
 
 
 if __name__ == '__main__':
