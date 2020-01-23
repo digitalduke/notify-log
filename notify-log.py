@@ -1,4 +1,5 @@
 import dbus
+import time
 
 from gi.repository import GLib
 from dbus.mainloop.glib import DBusGMainLoop
@@ -27,7 +28,8 @@ def process_notification(session_bus, signal_message):
     message = signal_message.get_args_list()
     app_name = message[3]
     notification = message[4]
-    print(f'---[ {app_name} ]---\r\n{notification}\r\n')
+    current_time = f'{time.localtime().tm_hour}:{time.localtime().tm_min}'
+    print(f'---[ {app_name} at {current_time} ]---\r\n{notification}\r\n')
 
 
 if __name__ == '__main__':
