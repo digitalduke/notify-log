@@ -21,9 +21,11 @@ def process_notification(session_bus, signal_message):
             Dict of {String, Variant} hints
             Int32 timeout
     """
-    if signal_message.get_member() == "Notify":
-        for arg in signal_message.get_args_list():
-            print(arg)
+    if not signal_message.get_member() == "Notify":
+        return
+
+    for arg in signal_message.get_args_list():
+        print(arg)
 
 
 if __name__ == '__main__':
