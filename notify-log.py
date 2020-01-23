@@ -4,9 +4,9 @@ from gi.repository import GLib
 from dbus.mainloop.glib import DBusGMainLoop
 
 
-def process_notification(session_bus, message):
-    if message.get_member() == "Notify":
-        for arg in message.get_args_list():
+def process_notification(session_bus, signal_message):
+    if signal_message.get_member() == "Notify":
+        for arg in signal_message.get_args_list():
             print(arg)
 
 
