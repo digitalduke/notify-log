@@ -6,6 +6,8 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
+dbus-python = "*"
+pygobject = "*"
 
 [requires]
 python_version = "3.7"
