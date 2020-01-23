@@ -24,8 +24,8 @@ def process_notification(session_bus, signal_message):
     if not signal_message.get_member() == "Notify":
         return
 
-    for arg in signal_message.get_args_list():
-        print(arg)
+    message = signal_message.get_args_list()
+    print('---[ %s ]---\r\n%s\r\n' % (message[3], message[4]))
 
 
 if __name__ == '__main__':
