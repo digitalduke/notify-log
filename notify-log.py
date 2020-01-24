@@ -26,10 +26,10 @@ def process_notification(session_bus, signal_message):
         return
 
     message = signal_message.get_args_list()
-    app_name = message[3]
-    notification = message[4]
+    message_title = message[3]
+    message_body = message[4]
     current_time = f'{time.localtime().tm_hour}:{time.localtime().tm_min}'
-    print(f'---[ {app_name} at {current_time} ]---\r\n{notification}\r\n')
+    print(f'---[ {message_title} at {current_time} ]---\r\n{message_body}\r\n')
 
 
 if __name__ == '__main__':
