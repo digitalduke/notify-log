@@ -33,7 +33,9 @@ def process_notification(session_bus, signal_message):
     message_title = message[3]
     message_body = message[4]
     current_time = f'{time.localtime().tm_hour}:{time.localtime().tm_min}'
-    print(f'---[ {Fore.YELLOW}{app_title}{Style.RESET_ALL} at {current_time} ]---\r\n{message_title}\r\n{message_body}\r\n')
+    print(f'---[ {Fore.YELLOW}{app_title}{Style.RESET_ALL} at {current_time} ]---')
+    print(f'{message_title}')
+    print(f'{message_body}\r\n')
 
 
 if __name__ == '__main__':
