@@ -1,4 +1,4 @@
-import time
+from datetime import datetime
 
 import colorama
 import dbus
@@ -31,7 +31,7 @@ def process_notification(session_bus, signal_message):
     app_title = message[0]
     message_title = message[3]
     message_body = message[4]
-    current_time = f'{time.localtime().tm_hour}:{time.localtime().tm_min}'
+    current_time = datetime.now().strftime('%H:%M')
     print(f'---[ {Fore.YELLOW}{app_title}{Style.RESET_ALL} at {current_time} ]---')
     print(f'{message_title}')
     print(f'{message_body}', end='\n\n')
