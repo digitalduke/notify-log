@@ -8,6 +8,7 @@ verify_ssl = true
 [packages]
 dbus-python = "==1.2.16"
 pygobject = "==3.34.0"
+colorama = "==0.4.3"
 
 [requires]
 python_version = "3.7"

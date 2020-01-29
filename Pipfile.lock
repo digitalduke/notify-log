@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "7a2f4851f5a30afa7be27a29591ad1f9fcd0cf29dfc396dd9fe967ea8145ea8e"
+            "sha256": "3c9f8bcb8e6d6bf28a13ae6e4761e9cd75c2af3ef06c6f7aa6a9ccff1ae3d5ea"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,6 +16,14 @@
         ]
     },
     "default": {
+        "colorama": {
+            "hashes": [
+                "sha256:7d73d2a99753107a36ac6b455ee49046802e59d9d076ef8e47b61499fa29afff",
+                "sha256:e96da0d330793e2cb9485e9ddfd918d456036c7149416295932478192f4436a1"
+            ],
+            "index": "pypi",
+            "version": "==0.4.3"
+        },
         "dbus-python": {
             "hashes": [
                 "sha256:11238f1d86c995d8aed2e22f04a1e3779f0d70e587caffeab4857f3c662ed5a4"

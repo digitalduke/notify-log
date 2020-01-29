@@ -1,6 +1,9 @@
 import dbus
 import time
 
+import colorama
+from colorama import Fore, Style
+
 from gi.repository import GLib
 from dbus.mainloop.glib import DBusGMainLoop
 
@@ -30,10 +33,11 @@ def process_notification(session_bus, signal_message):
     message_title = message[3]
     message_body = message[4]
     current_time = f'{time.localtime().tm_hour}:{time.localtime().tm_min}'
-    print(f'---[ {app_title} at {current_time} ]---\r\n{message_title}\r\n{message_body}\r\n')
+    print(f'---[ {Fore.YELLOW}{app_title}{Style.RESET_ALL} at {current_time} ]---\r\n{message_title}\r\n{message_body}\r\n')
 
 
 if __name__ == '__main__':
+    colorama.init()
     DBusGMainLoop(set_as_default=True)
 
     bus = dbus.SessionBus()
