@@ -1,11 +1,10 @@
-import dbus
 import time
 
 import colorama
+import dbus
 from colorama import Fore, Style
-
-from gi.repository import GLib
 from dbus.mainloop.glib import DBusGMainLoop
+from gi.repository import GLib
 
 
 def process_notification(session_bus, signal_message):
