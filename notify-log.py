@@ -46,4 +46,11 @@ if __name__ == '__main__':
     bus.add_message_filter(process_notification)
 
     mainloop = GLib.MainLoop()
-    mainloop.run()
+
+    try:
+        try:
+            mainloop.run()
+        except KeyboardInterrupt:
+            raise
+    except (KeyboardInterrupt, SystemExit):
+        print('\nBuy!')
