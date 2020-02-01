@@ -2,9 +2,17 @@ from datetime import datetime
 
 import colorama
 import dbus
+from bs4 import BeautifulSoup
 from colorama import Fore, Style
 from dbus.mainloop.glib import DBusGMainLoop
 from gi.repository import GLib
+
+
+def clean_text(raw_text):
+    soup = BeautifulSoup(raw_text, 'html.parser')
+    for unwanted in soup(["script", "style", "meta"]):
+        unwanted.extract()
+    return soup.get_text()
 
 
 def process_notification(session_bus, signal_message):
@@ -34,7 +42,7 @@ def process_notification(session_bus, signal_message):
     current_time = datetime.now().strftime('%H:%M')
     print(f'---[ {Fore.YELLOW}{app_title}{Style.RESET_ALL} at {current_time} ]---')
     print(f'{message_title}')
-    print(f'{message_body}', end='\n\n')
+    print(f'{clean_text(message_body)}', end='\n\n')
 
 
 def run():
