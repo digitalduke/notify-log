@@ -39,13 +39,13 @@ def process_notification(session_bus, signal_message):
 
 def run():
     colorama.init()
+
     DBusGMainLoop(set_as_default=True)
+    mainloop = GLib.MainLoop()
 
     bus = dbus.SessionBus()
     bus.add_match_string_non_blocking("eavesdrop=true, interface='org.freedesktop.Notifications'")
     bus.add_message_filter(process_notification)
-
-    mainloop = GLib.MainLoop()
 
     try:
         try:
