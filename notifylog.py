@@ -37,7 +37,7 @@ def process_notification(session_bus, signal_message):
     print(f'{message_body}', end='\n\n')
 
 
-if __name__ == '__main__':
+def run():
     colorama.init()
     DBusGMainLoop(set_as_default=True)
 
@@ -54,3 +54,7 @@ if __name__ == '__main__':
             raise
     except (KeyboardInterrupt, SystemExit):
         print('\nBuy!')
+
+
+if __name__ == '__main__':
+    run()
