@@ -1,0 +1,12 @@
+Source: notify-log
+Section: python
+Priority: extra
+Maintainer: George P. <digitalduke@gmail.com>
+Build-Depends: debhelper (>= 9), python, dh-virtualenv (>= 0.8)
+Standards-Version: 3.9.5
+
+Package: notify-log
+Architecture: any
+Pre-Depends: dpkg (>= 1.16.1), python3.7 ${misc:Pre-Depends}
+Depends: ${misc:Depends}
+Description: org.freedesktop.Notifications eavesdropper

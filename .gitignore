@@ -4,3 +4,9 @@ dist/
 *.egg-info/
 .venv
 .idea
+debian/**
+!debian/changelog
+!debian/control
+!debian/rules
+!debian/compat
+!debian/notify-log.links
