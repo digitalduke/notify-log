@@ -21,6 +21,7 @@ setup(
         'dbus-python==1.2.16',
         'PyGObject==3.34.0',
         'colorama==0.4.3',
+        'beautifulsoup4 >=4.8.2, <4.9',
     ],
     python_requires='>=3',
     entry_points={
