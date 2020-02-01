@@ -55,6 +55,7 @@ def run():
     bus.add_match_string_non_blocking("eavesdrop=true, interface='org.freedesktop.Notifications'")
     bus.add_message_filter(process_notification)
 
+    print(f'notify-log started...', end='\n\n')
     try:
         try:
             mainloop.run()
