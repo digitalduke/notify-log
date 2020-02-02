@@ -20,14 +20,13 @@ If everything is ok you will see greetings message, like this `notify-log starte
 
 Install dependent packages for build 
 
-dbus-python:
 ```shell
+# dbus-python:
 $ sudo apt install pkg-config libdbus-1-dev libglib2.0-dev
-```
-
-PyGObject:
-```shell
+# PyGObject:
 $ sudo apt install libcairo2-dev libgirepository1.0-dev
+# dh-virtualenv
+$ sudo apt install dh-virtualenv
 ```
 
 Build & upload python package (in an activated environment):
@@ -35,7 +34,7 @@ Build & upload python package (in an activated environment):
 $ python setup.py sdist
 $ python -m twine upload
 ```
-Build .deb-package:
+Build .deb-package (in project root and deactivated environment):
 ```shell
 $ dpkg-buildpackage -us -uc --build=binary --post-clean
 ```
